@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jarvis — We're Hiring</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #000;
+    color: #fff;
+    font-family: 'Barlow', sans-serif;
+    min-height: 100vh;
+  }
+
+  .page {
+    width: 800px;
+    margin: 0 auto;
+    padding: 60px 60px 80px;
+  }
+
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #222;
+  }
+
+  .logo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900;
+    font-size: 28px;
+    letter-spacing: 2px;
+    color: #D4FF00;
+    text-transform: uppercase;
+  }
+
+  .badge {
+    background: #D4FF00;
+    color: #000;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+  }
+
+  /* Hero */
+  .hero {
+    margin-bottom: 56px;
+  }
+
+  .tag {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #D4FF00;
+    margin-bottom: 16px;
+  }
+
+  h1 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900;
+    font-size: 72px;
+    line-height: 0.95;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 24px;
+  }
+
+  h1 span {
+    color: #D4FF00;
+  }
+
+  .subhead {
+    font-size: 17px;
+    font-weight: 400;
+    color: #999;
+    line-height: 1.6;
+    max-width: 520px;
+  }
+
+  /* Roles */
+  .roles {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 48px;
+  }
+
+  .role-card {
+    background: #0d0d0d;
+    border: 1px solid #1a1a1a;
+    padding: 36px 32px;
+  }
+
+  .role-card.highlight {
+    border-color: #D4FF00;
+  }
+
+  .role-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900;
+    font-size: 28px;
+    text-transform: uppercase;
+    color: #D4FF00;
+    margin-bottom: 4px;
+    letter-spacing: 1px;
+  }
+
+  .role-type {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #555;
+    margin-bottom: 28px;
+  }
+
+  .comp-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 10px 0;
+    border-bottom: 1px solid #1a1a1a;
+  }
+
+  .comp-line:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+
+  .comp-label {
+    font-size: 13px;
+    color: #666;
+    font-weight: 500;
+  }
+
+  .comp-value {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    color: #fff;
+  }
+
+  .comp-value.yellow {
+    color: #D4FF00;
+  }
+
+  /* Earnings */
+  .earnings {
+    background: #0d0d0d;
+    border: 1px solid #1a1a1a;
+    padding: 36px 40px;
+    margin-bottom: 48px;
+  }
+
+  .earnings-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #555;
+    margin-bottom: 28px;
+  }
+
+  .earnings-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0;
+  }
+
+  .earnings-col {
+    padding: 0 32px;
+    border-right: 1px solid #1a1a1a;
+  }
+
+  .earnings-col:first-child {
+    padding-left: 0;
+  }
+
+  .earnings-col:last-child {
+    border-right: none;
+  }
+
+  .earnings-month {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #555;
+    margin-bottom: 8px;
+  }
+
+  .earnings-amount {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900;
+    font-size: 40px;
+    color: #fff;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .earnings-amount.peak {
+    color: #D4FF00;
+  }
+
+  .earnings-note {
+    font-size: 12px;
+    color: #444;
+  }
+
+  /* Conditions */
+  .conditions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 48px;
+  }
+
+  .condition {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px 20px;
+    background: #0a0a0a;
+    border: 1px solid #1a1a1a;
+  }
+
+  .condition-icon {
+    font-size: 16px;
+    margin-top: 1px;
+    flex-shrink: 0;
+  }
+
+  .condition-text {
+    font-size: 14px;
+    color: #888;
+    line-height: 1.5;
+  }
+
+  .condition-text strong {
+    color: #fff;
+    font-weight: 600;
+  }
+
+  /* CTA */
+  .cta-section {
+    border-top: 1px solid #1a1a1a;
+    padding-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .cta-left h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900;
+    font-size: 28px;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+
+  .cta-left p {
+    font-size: 14px;
+    color: #555;
+  }
+
+  .cta-button {
+    background: #D4FF00;
+    color: #000;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 16px 36px;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  /* Print */
+  @media print {
+    body { background: #000; }
+    .page { width: 100%; padding: 40px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="logo">JARVIS</div>
+    <div class="badge">Now Hiring</div>
+  </div>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="tag">Commission-Based · Remote · US & Australia</div>
+    <h1>Build a <span>residual</span><br>income stream<br>that compounds.</h1>
+    <p class="subhead">We're a fast-growing agency that builds automation systems using pre-trained VAs for business owners doing $10K+/month. Leads provided. Proven offer. You close or set, we handle the rest.</p>
+  </div>
+
+  <!-- Role Cards -->
+  <div class="roles">
+    <div class="role-card">
+      <div class="role-title">Closer</div>
+      <div class="role-type">Commission Only</div>
+
+      <div class="comp-line">
+        <span class="comp-label">Per deal closed</span>
+        <span class="comp-value yellow">$300</span>
+      </div>
+      <div class="comp-line">
+        <span class="comp-label">Monthly recurring</span>
+        <span class="comp-value yellow">10%</span>
+      </div>
+      <div class="comp-line">
+        <span class="comp-label">Per retained client</span>
+        <span class="comp-value">$160 / mo</span>
+      </div>
+      <div class="comp-line">
+        <span class="comp-label">Minimum (Month 1)</span>
+        <span class="comp-value">2 closes</span>
+      </div>
+    </div>
+
+    <div class="role-card">
+      <div class="role-title">Setter</div>
+      <div class="role-type">Commission Only</div>
+
+      <div class="comp-line">
+        <span class="comp-label">Per qualified show</span>
+        <span class="comp-value yellow">$40</span>
+      </div>
+      <div class="comp-line">
+        <span class="comp-label">Average earnings</span>
+        <span class="comp-value yellow">$2,000 / mo</span>
+      </div>
+      <div class="comp-line">
+        <span class="comp-label">Leads provided</span>
+        <span class="comp-value">8K+ pool</span>
+      </div>
+      <div class="comp-line">
+        <span class="comp-label">Minimum (Month 1)</span>
+        <span class="comp-value">20 shows</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Closer Earnings Projection -->
+  <div class="earnings">
+    <div class="earnings-title">Closer — Top Performer Earnings (3 closes / week)</div>
+    <div class="earnings-grid">
+      <div class="earnings-col">
+        <div class="earnings-month">Month 1</div>
+        <div class="earnings-amount">$3,600</div>
+        <div class="earnings-note">12 closes × $300</div>
+      </div>
+      <div class="earnings-col">
+        <div class="earnings-month">Month 3</div>
+        <div class="earnings-amount">$9,360</div>
+        <div class="earnings-note">$3,600 + $5,760 recurring</div>
+      </div>
+      <div class="earnings-col">
+        <div class="earnings-month">Month 6</div>
+        <div class="earnings-amount peak">$15,120</div>
+        <div class="earnings-note">$3,600 + $11,520 recurring</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Conditions -->
+  <div class="conditions" style="margin-bottom: 32px;">
+    <div class="condition">
+      <div class="condition-icon">✓</div>
+      <div class="condition-text"><strong>Leads provided</strong> — 8,000+ opted-in business owners in our pool. You don't source, you close.</div>
+    </div>
+    <div class="condition">
+      <div class="condition-icon">✓</div>
+      <div class="condition-text"><strong>Proven offer</strong> — 22 active clients, $35K/month in recurring revenue and growing.</div>
+    </div>
+    <div class="condition">
+      <div class="condition-icon">✓</div>
+      <div class="condition-text"><strong>Recurring income</strong> — Every retained client pays you every month. The longer they stay, the more you earn.</div>
+    </div>
+    <div class="condition">
+      <div class="condition-icon">✓</div>
+      <div class="condition-text"><strong>60-day clawback</strong> — We protect quality. Client cancels in 60 days, $300 is returned. Close right fits only.</div>
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+  <div style="border-top: 1px solid #1a1a1a; padding-top: 32px; display: flex; justify-content: space-between; align-items: center;">
+    <div>
+      <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 20px; text-transform: uppercase; color: #fff; margin-bottom: 4px;">Interested?</div>
+      <div style="font-size: 14px; color: #555;">Send your background and experience to</div>
+    </div>
+    <a href="mailto:passion@gojarvis.ai" style="font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 20px; color: #D4FF00; text-decoration: none; letter-spacing: 1px;">passion@gojarvis.ai</a>
+  </div>
+
+</div>
+</body>
+</html>
