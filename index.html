@@ -294,6 +294,76 @@
     body { background: #000; }
     .page { width: 100%; padding: 40px; }
   }
+
+  /* Mobile */
+  @media (max-width: 640px) {
+    .page {
+      width: 100%;
+      padding: 32px 24px 60px;
+    }
+
+    .header {
+      margin-bottom: 40px;
+    }
+
+    h1 {
+      font-size: 48px;
+    }
+
+    .subhead {
+      font-size: 15px;
+      max-width: 100%;
+    }
+
+    .hero {
+      margin-bottom: 40px;
+    }
+
+    .roles {
+      grid-template-columns: 1fr;
+      margin-bottom: 32px;
+    }
+
+    .role-card {
+      padding: 28px 24px;
+    }
+
+    .earnings {
+      padding: 28px 24px;
+      margin-bottom: 32px;
+    }
+
+    .earnings-grid {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .earnings-col {
+      padding: 0;
+      border-right: none;
+      border-bottom: 1px solid #1a1a1a;
+      padding-bottom: 20px;
+    }
+
+    .earnings-col:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .earnings-amount {
+      font-size: 36px;
+    }
+
+    .conditions {
+      grid-template-columns: 1fr;
+    }
+
+    .footer-row {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+    }
+  }
 </style>
 </head>
 <body>
@@ -403,7 +473,7 @@
 
 
   <!-- Footer -->
-  <div style="border-top: 1px solid #1a1a1a; padding-top: 32px; display: flex; justify-content: space-between; align-items: center;">
+  <div class="footer-row" style="border-top: 1px solid #1a1a1a; padding-top: 32px; display: flex; justify-content: space-between; align-items: center;">
     <div>
       <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 20px; text-transform: uppercase; color: #fff; margin-bottom: 4px;">Interested?</div>
       <div style="font-size: 14px; color: #555;">Send your background and experience to</div>
